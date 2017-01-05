@@ -1,0 +1,11 @@
+approvals:
+  # PR needs at least 2 approvals
+  minimum: 2
+  from:
+    # commenter must be either one of:
+    # a public zalando org member
+    orgs:
+      - zalando
+      - zalando-incubator
+    # a collaborator of the repo
+    collaborators: true
