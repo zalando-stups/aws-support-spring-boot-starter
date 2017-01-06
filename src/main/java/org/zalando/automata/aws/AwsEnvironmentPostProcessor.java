@@ -16,44 +16,46 @@ import org.springframework.core.env.PropertiesPropertySource;
 import com.amazonaws.util.EC2MetadataUtils;
 
 /**
- *
+ * A simple {@link EnvironmentPostProcessor} for a Spring Boot application that will
+ * recognize when the application is running on AWS EC2 utilizing {@link EC2MetadataUtils} and will
+ * expose various AWS properties on the environment.
  */
 public class AwsEnvironmentPostProcessor implements EnvironmentPostProcessor, Ordered {
 
 	private final Logger log = LoggerFactory.getLogger(AwsEnvironmentPostProcessor.class);
 
 	/**
-	 *
+	 * The base prefix for all exposed properties
 	 */
 	public static final String AWS_PREFIX = "aws";
 
 	/**
-	 *
+	 * The key for the enabled property
 	 */
 	public static final String AWS_ENABLED_KEY = AWS_PREFIX + ".enabled";
 
 	/**
-	 *
+	 * The key for the AWS availability zone property
 	 */
 	public static final String AWS_AZ_KEY = AWS_PREFIX + ".az";
 
 	/**
-	 *
+	 * The key for the AWS region property
 	 */
 	public static final String AWS_REGION_KEY = AWS_PREFIX + ".region";
 
 	/**
-	 *
+	 * The key for the AWS hostname property
 	 */
 	public static final String AWS_HOSTNAME_KEY = AWS_PREFIX + ".localhostname";
 
 	/**
-	 *
+	 * The key for the AWS local IPv4 address property
 	 */
 	public static final String AWS_LOCAL_IPV4_KEY = AWS_PREFIX + ".localipv4";
 
 	/**
-	 *
+	 * The key for the AWS instance ID property
 	 */
 	public static final String AWS_INSTANCE_ID_KEY = AWS_PREFIX + ".instanceid";
 
@@ -61,8 +63,10 @@ public class AwsEnvironmentPostProcessor implements EnvironmentPostProcessor, Or
 	private int order = ConfigFileApplicationListener.DEFAULT_ORDER - 1;
 
 	/**
+	 * Set the order for determining when the {@link EnvironmentPostProcessor} should be executed. If
+	 * not set the order will default to {@link ConfigFileApplicationListener} DEFAULT_ORDER - 1.
 	 *
-	 * @param order
+	 * @param order  The int value for the order to set. See {@link Ordered} for more details.
    */
 	public void setOrder(int order) {
 		this.order = order;
@@ -101,6 +105,11 @@ public class AwsEnvironmentPostProcessor implements EnvironmentPostProcessor, Or
 		}
 	}
 
+	/**
+	 * Get the local IPv4 address.
+	 *
+	 * @return The local IPv4 address string if available, null otherwise.
+   */
 	private String getAwsLocalIpV4() {
 		try {
 			return EC2MetadataUtils.getNetworkInterfaces().get(0).getLocalIPv4s().get(0);
@@ -110,41 +119,46 @@ public class AwsEnvironmentPostProcessor implements EnvironmentPostProcessor, Or
 	}
 
 	/**
+	 * Get the availability zone.
 	 *
-	 * @return
-	 */
+	 * @return The availability zone string.
+   */
 	protected String getAwsAvailabilityZone() {
 		return EC2MetadataUtils.getAvailabilityZone();
 	}
 
 	/**
+	 * Get the region.
 	 *
-	 * @return
-	 */
+	 * @return The region string.
+   */
 	protected String getAwsRegion() {
 		return EC2MetadataUtils.getEC2InstanceRegion();
 	}
 
 	/**
+	 * Get the local hostname.
 	 *
-	 * @return
-	 */
+	 * @return The local hostname string.
+   */
 	protected String getAwsLocalHostname() {
 		return EC2MetadataUtils.getLocalHostName();
 	}
 
 	/**
+	 * Get the instance ID.
 	 *
-	 * @return
-	 */
+	 * @return The instance ID string.
+   */
 	protected String getInstanceId() {
 		return EC2MetadataUtils.getInstanceId();
 	}
 
 	/**
+	 * Get whether AWS metadata is available, i.e. whether the application is running on AWS.
 	 *
-	 * @return
-	 */
+	 * @return True if AWS metadata is available, false otherwise.
+   */
 	protected boolean awsMetadataServiceIsAvailable() {
 		return EC2MetadataUtils.getInstanceId() != null;
 	}
