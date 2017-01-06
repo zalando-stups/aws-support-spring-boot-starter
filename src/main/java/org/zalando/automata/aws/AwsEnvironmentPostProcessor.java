@@ -66,7 +66,7 @@ public class AwsEnvironmentPostProcessor implements EnvironmentPostProcessor, Or
 	 * Set the order for determining when the {@link EnvironmentPostProcessor} should be executed. If
 	 * not set the order will default to {@link ConfigFileApplicationListener} DEFAULT_ORDER - 1.
 	 *
-	 * @param order  The int value for the order to set. See {@link Ordered} for more details.
+	 * @param order  the int value for the order to set. See {@link Ordered} for more details.
    */
 	public void setOrder(int order) {
 		this.order = order;
@@ -108,7 +108,7 @@ public class AwsEnvironmentPostProcessor implements EnvironmentPostProcessor, Or
 	/**
 	 * Get the local IPv4 address.
 	 *
-	 * @return The local IPv4 address string if available, null otherwise.
+	 * @return  the local IPv4 address string if available, null otherwise.
    */
 	private String getAwsLocalIpV4() {
 		try {
@@ -121,7 +121,7 @@ public class AwsEnvironmentPostProcessor implements EnvironmentPostProcessor, Or
 	/**
 	 * Get the availability zone.
 	 *
-	 * @return The availability zone string.
+	 * @return  the availability zone string.
    */
 	protected String getAwsAvailabilityZone() {
 		return EC2MetadataUtils.getAvailabilityZone();
@@ -130,7 +130,7 @@ public class AwsEnvironmentPostProcessor implements EnvironmentPostProcessor, Or
 	/**
 	 * Get the region.
 	 *
-	 * @return The region string.
+	 * @return  the region string.
    */
 	protected String getAwsRegion() {
 		return EC2MetadataUtils.getEC2InstanceRegion();
@@ -139,7 +139,7 @@ public class AwsEnvironmentPostProcessor implements EnvironmentPostProcessor, Or
 	/**
 	 * Get the local hostname.
 	 *
-	 * @return The local hostname string.
+	 * @return  the local hostname string.
    */
 	protected String getAwsLocalHostname() {
 		return EC2MetadataUtils.getLocalHostName();
@@ -148,7 +148,7 @@ public class AwsEnvironmentPostProcessor implements EnvironmentPostProcessor, Or
 	/**
 	 * Get the instance ID.
 	 *
-	 * @return The instance ID string.
+	 * @return  the instance ID string.
    */
 	protected String getInstanceId() {
 		return EC2MetadataUtils.getInstanceId();
@@ -157,7 +157,7 @@ public class AwsEnvironmentPostProcessor implements EnvironmentPostProcessor, Or
 	/**
 	 * Get whether AWS metadata is available, i.e. whether the application is running on AWS.
 	 *
-	 * @return True if AWS metadata is available, false otherwise.
+	 * @return  true if AWS metadata is available, false otherwise.
    */
 	protected boolean awsMetadataServiceIsAvailable() {
 		return EC2MetadataUtils.getInstanceId() != null;
