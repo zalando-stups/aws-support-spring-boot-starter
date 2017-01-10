@@ -1,4 +1,4 @@
-package org.zalando.automata.aws;
+package org.zalando.spring.boot.starter.aws;
 
 import java.util.Properties;
 
