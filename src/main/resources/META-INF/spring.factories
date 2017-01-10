@@ -1,4 +1,4 @@
 #
 #
 org.springframework.boot.env.EnvironmentPostProcessor=\
-org.zalando.automata.aws.AwsEnvironmentPostProcessor
+org.zalando.spring.boot.starter.aws.AwsEnvironmentPostProcessor
