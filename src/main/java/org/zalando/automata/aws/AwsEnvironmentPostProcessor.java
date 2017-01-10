@@ -67,7 +67,7 @@ public class AwsEnvironmentPostProcessor implements EnvironmentPostProcessor, Or
 	 * not set the order will default to {@link ConfigFileApplicationListener} DEFAULT_ORDER - 1.
 	 *
 	 * @param order  the int value for the order to set. See {@link Ordered} for more details.
-   */
+	 */
 	public void setOrder(int order) {
 		this.order = order;
 	}
@@ -109,7 +109,7 @@ public class AwsEnvironmentPostProcessor implements EnvironmentPostProcessor, Or
 	 * Get the local IPv4 address.
 	 *
 	 * @return  the local IPv4 address string if available, null otherwise.
-   */
+	 */
 	private String getAwsLocalIpV4() {
 		try {
 			return EC2MetadataUtils.getNetworkInterfaces().get(0).getLocalIPv4s().get(0);
@@ -122,7 +122,7 @@ public class AwsEnvironmentPostProcessor implements EnvironmentPostProcessor, Or
 	 * Get the availability zone.
 	 *
 	 * @return  the availability zone string.
-   */
+	 */
 	protected String getAwsAvailabilityZone() {
 		return EC2MetadataUtils.getAvailabilityZone();
 	}
@@ -131,7 +131,7 @@ public class AwsEnvironmentPostProcessor implements EnvironmentPostProcessor, Or
 	 * Get the region.
 	 *
 	 * @return  the region string.
-   */
+	 */
 	protected String getAwsRegion() {
 		return EC2MetadataUtils.getEC2InstanceRegion();
 	}
@@ -140,7 +140,7 @@ public class AwsEnvironmentPostProcessor implements EnvironmentPostProcessor, Or
 	 * Get the local hostname.
 	 *
 	 * @return  the local hostname string.
-   */
+	 */
 	protected String getAwsLocalHostname() {
 		return EC2MetadataUtils.getLocalHostName();
 	}
@@ -149,7 +149,7 @@ public class AwsEnvironmentPostProcessor implements EnvironmentPostProcessor, Or
 	 * Get the instance ID.
 	 *
 	 * @return  the instance ID string.
-   */
+	 */
 	protected String getInstanceId() {
 		return EC2MetadataUtils.getInstanceId();
 	}
@@ -158,7 +158,7 @@ public class AwsEnvironmentPostProcessor implements EnvironmentPostProcessor, Or
 	 * Get whether AWS metadata is available, i.e. whether the application is running on AWS.
 	 *
 	 * @return  true if AWS metadata is available, false otherwise.
-   */
+	 */
 	protected boolean awsMetadataServiceIsAvailable() {
 		return EC2MetadataUtils.getInstanceId() != null;
 	}
