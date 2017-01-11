@@ -5,7 +5,9 @@ that detects whether an application is running on AWS or not. It utilizes the
 
 [![Build Status](https://travis-ci.org/zalando-incubator/aws-support-spring-boot-starter.svg?branch=master)](https://travis-ci.org/zalando-incubator/aws-support-spring-boot-starter)
 [![Javadoc](https://javadoc-emblem.rhcloud.com/doc/org.zalando/aws-support-spring-boot-starter/badge.svg)](http://www.javadoc.io/doc/org.zalando/aws-support-spring-boot-starter)
-![Maven Central](https://img.shields.io/maven-central/v/org.zalando/aws-support-spring-boot-starter.svg)
+[![Release](https://img.shields.io/github/release/zalando-incubator/aws-support-spring-boot-starter.svg)](https://github.com/zalando-incubator/aws-support-spring-boot-starter/releases)
+[![Maven Central](https://img.shields.io/maven-central/v/org.zalando/aws-support-spring-boot-starter.svg)](https://maven-badges.herokuapp.com/maven-central/org.zalando/aws-support-spring-boot-starter)
+[![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/zalando-incubator/aws-support-spring-boot-starter/master/LICENSE)
 
 
 ## Usage
