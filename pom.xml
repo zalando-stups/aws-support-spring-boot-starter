@@ -4,7 +4,7 @@
 
     <groupId>org.zalando</groupId>
     <artifactId>aws-support-spring-boot-starter</artifactId>
-    <version>1.0.0</version>
+    <version>1.0.1</version>
     <packaging>jar</packaging>
 
     <name>Spring-Boot-Starter - AWS-Support</name>
