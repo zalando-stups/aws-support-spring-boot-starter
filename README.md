@@ -20,7 +20,7 @@ Add the following to your `pom.xml`
 <dependency>
     <groupId>org.zalando</groupId>
     <artifactId>aws-support-spring-boot-starter</artifactId>
-    <version>${version}</version>
+    <version>${aws-support-spring-boot-starter.version}</version>
 </dependency>
 ```
 
@@ -28,7 +28,7 @@ Add the following to your `pom.xml`
 Add the following to your `build.gradle`
 
 ```
-compile('org.zalando:aws-support-spring-boot-starter:$version')
+compile('org.zalando:aws-support-spring-boot-starter:$aws-support-spring-boot-starter.version')
 ```
 
 ### Download
